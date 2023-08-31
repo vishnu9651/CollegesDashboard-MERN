@@ -94,4 +94,32 @@ router.post("/", async (req, res) => {
     }
 });
 
+
+
+router.delete("/:id", async (req, res) => {
+
+    const collegeId = req.params.id
+
+    try {
+        const deleteCollege = await College.findByIdAndDelete(collegeId)
+
+        if (!deleteCollege) {
+            res.status(404).json({ message: "College not found" })
+        }
+
+        res.json({ message: "College Deleted successfully" })
+
+    }
+    catch (error) {
+        res.status(500).json({ message: error.messge })
+    }
+
+})
+
+
+
+
+
+
+
 module.exports = router;

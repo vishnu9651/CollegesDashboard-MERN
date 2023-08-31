@@ -25,7 +25,7 @@ const courseSchema = new mongoose.Schema({
 });
 
 const collegeSchema = new mongoose.Schema({
-    id: Number, // Unique identifier
+    
     collegeName: String,
     city: String,
     state: String,
